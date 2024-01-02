@@ -1,0 +1,30 @@
+<%= form_with(model: @invitation, url: invitations_path, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :host_name %>
+    <%= form.text_field :host_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :event_address %>
+    <%= form.text_field :event_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :host_phone %>
+    <%= form.text_field :host_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :event_description %>
+    <%= form.text_area :event_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :event_date %>
+    <%= form.datetime_field :event_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Create Invitation" %>
+  </div>
+<% end %>
