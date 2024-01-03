@@ -1,30 +1,30 @@
 <%= form_with(model: @invitation, url: invitations_path, local: true) do |form| %>
-  <div class="field">
-    <%= form.label :host_name %>
-    <%= form.text_field :host_name %>
+  <div class="mb-3">
+    <%= form.label "Nombre del anfitrión", class: "form-label" %>
+    <%= form.text_field :host_name, class: "form-control"  %>
   </div>
 
-  <div class="field">
-    <%= form.label :event_address %>
-    <%= form.text_field :event_address %>
+  <div class="mb-3">
+    <%= form.label "Dirección", class: "form-label"  %>
+    <%= form.text_field :event_address, class: "form-control"  %>
   </div>
 
-  <div class="field">
-    <%= form.label :host_phone %>
-    <%= form.text_field :host_phone %>
+  <div class="mb-3">
+    <%= form.label "Teléfono de Contacto", class: "form-label"  %>
+    <%= form.text_field :host_phone, class: "form-control"  %>
   </div>
 
-  <div class="field">
-    <%= form.label :event_description %>
-    <%= form.text_area :event_description %>
+  <div class="mb-3">
+    <%= form.label "Descripción del evento", class: "form-label"  %>
+    <%= form.text_area :event_description, class: "form-control"  %>
   </div>
 
-  <div class="field">
-    <%= form.label :event_date %>
-    <%= form.datetime_field :event_date %>
+  <div class="mb-3">
+    <%= form.label "Fecha y hora", class: "form-label"  %>
+    <%= form.datetime_field :event_date, class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit "Create Invitation" %>
+  <div class="mb-3">
+    <%= form.submit "Crear Invitación", class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -1,8 +1,12 @@
-<h2>Invitation Details</h2>
+<h2>Hola soy <%= @invitation.host_name %> y te invito a mi Cumpleaños!</h2>
 
-<p>Host Name: <%= @invitation.host_name %></p>
-<p>Event Address: <%= @invitation.event_address %></p>
-<p>Host Phone: <%= @invitation.host_phone %></p>
-<p>Event Date: <%= @invitation.event_date %></p>
-<p>Event Description:</p>
 <p><%= @invitation.event_description %></p>
+
+<p>Es el día <%= @invitation.event_date %></p>
+<p>Esta es la dirección <%= @invitation.event_address %></p>
+
+
+  <a 
+    href="https://wa.me/<%= @invitation.host_phone %>" class="btn btn-success" 
+    target="_blank">Confirmar por WhatsApp <i class="bi bi-whatsapp"></i>
+  </a>
