@@ -5,8 +5,9 @@
 <p>Es el día <%= @invitation.event_date %></p>
 <p>Esta es la dirección <%= @invitation.event_address %></p>
 
+<img width="300" height="300" src= <%= @mapsrc %>>
 
-  <a 
-    href="https://wa.me/<%= @invitation.host_phone %>" class="btn btn-success" 
-    target="_blank">Confirmar por WhatsApp <i class="bi bi-whatsapp"></i>
-  </a>
+<a 
+  href="https://wa.me/<%= @invitation.host_phone %>" class="my-3 btn btn-success" 
+  target="_blank">Confirmar por WhatsApp <i class="bi bi-whatsapp"></i>
+</a>

@@ -99,9 +99,14 @@ GEM
     debug (1.9.1)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
+    geocoder (1.8.2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -245,6 +250,8 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  dotenv-rails
+  geocoder (~> 1.8, >= 1.8.2)
   importmap-rails
   jbuilder
   puma (>= 5.0)

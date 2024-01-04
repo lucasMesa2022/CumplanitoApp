@@ -10,15 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_02_145029) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_03_173042) do
   create_table "invitations", force: :cascade do |t|
-    t.string "host_name", null: false
-    t.string "event_address", null: false
-    t.string "host_phone", null: false
-    t.text "event_description", null: false
-    t.datetime "event_date", null: false
+    t.string "host_name"
+    t.string "event_address"
+    t.string "host_phone"
+    t.text "event_description"
+    t.datetime "event_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "event_latitude"
+    t.float "event_longitude"
   end
 
 end
