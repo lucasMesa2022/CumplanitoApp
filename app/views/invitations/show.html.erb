@@ -2,10 +2,12 @@
 
 <p><%= @invitation.event_description %></p>
 
-<p>Es el día <%= @invitation.event_date %></p>
+<p>Es el día <%= @invitation.event_date.strftime("%-d/%-m a las %H:%M") %></p>
 <p>Esta es la dirección <%= @invitation.event_address %></p>
 
-<img width="300" height="300" src= <%= @mapsrc %>>
+<% if @mapsrc.present? %>
+  <img width="300" height="300" src= <%= @mapsrc %>>
+<% end %>
 
 <a 
   href="https://wa.me/<%= @invitation.host_phone %>" class="my-3 btn btn-success" 

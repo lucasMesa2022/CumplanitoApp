@@ -11,7 +11,18 @@
 
   <div class="mb-3">
     <%= form.label "Teléfono de Contacto", class: "form-label"  %>
-    <%= form.text_field :host_phone, class: "form-control"  %>
+    <div class= "input-group">
+      <div class="input-group-prepend">  
+        <%= form.select :country_code, PhonyRails.country_codes_hash, {}, class: "form-select" do %>
+          <% PhonyRails.country_codes_hash.each do |value, country_code| %>
+            <option country_code = "<%= country_code.fetch("country_code") %>" value= "<%= value %>" <%= 'selected' if value == 'UY' %>>
+            <%= value %> (<%= country_code.fetch("country_code") %>) 
+            </option>
+          <% end %>
+        <% end %>
+      </div>
+      <%= form.text_field :host_phone, class: "form-control"  %>
+    </div>
   </div>
 
   <div class="mb-3">

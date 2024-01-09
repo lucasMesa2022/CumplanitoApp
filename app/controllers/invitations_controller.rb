@@ -6,6 +6,7 @@ class InvitationsController < ApplicationController
   def create
     @invitation = Invitation.new(invitation_params)
     @invitation.get_coordinates
+    @invitation.format_phone(country_code: params[:invitation][:country_code])
 
     if @invitation.save
       redirect_to invitation_path(@invitation)
@@ -16,7 +17,9 @@ class InvitationsController < ApplicationController
 
   def show
     @invitation = Invitation.find(params[:id])
-    @mapsrc = @invitation.generate_map
+    if @invitation.event_latitude.present? && @invitation.event_longitude.present?
+      @mapsrc = @invitation.generate_map
+    end
   end
 
   private

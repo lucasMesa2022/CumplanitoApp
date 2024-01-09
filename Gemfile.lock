@@ -150,6 +150,10 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.0-x86_64-linux)
       racc (~> 1.4)
+    phony (2.20.11)
+    phony_rails (0.15.0)
+      activesupport (>= 3.0)
+      phony (>= 2.18.12)
     psych (5.1.2)
       stringio
     public_suffix (5.0.4)
@@ -254,6 +258,7 @@ DEPENDENCIES
   geocoder (~> 1.8, >= 1.8.2)
   importmap-rails
   jbuilder
+  phony_rails (~> 0.15.0)
   puma (>= 5.0)
   rails (~> 7.1.2)
   selenium-webdriver

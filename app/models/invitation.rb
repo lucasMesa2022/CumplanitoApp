@@ -4,10 +4,19 @@ class Invitation < ApplicationRecord
   def get_coordinates
     coordinates = Geocoder.search(event_address).first.coordinates
 
-    self.event_latitude = coordinates[0]
-    self.event_longitude = coordinates[1]
+    if coordinates.present?
+      self.event_latitude = coordinates[0]
+      self.event_longitude = coordinates[1]
+      save
+    end
+  end
 
-    save if coordinates.present?
+  def format_phone(country_code:)
+    full_phone_number = PhonyRails.normalize_number(self.host_phone, country_code:)
+    if PhonyRails.plausible_number?(full_phone_number)
+      self.host_phone = full_phone_number
+      save
+    end
   end
 
   def generate_map
